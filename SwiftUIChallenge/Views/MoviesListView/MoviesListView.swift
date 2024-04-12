@@ -8,11 +8,30 @@
 import SwiftUI
 
 struct MoviesListView: View {
+    
+    let movies: [Movie]
+    
+    @Environment(MainCoordinator.self) private var coordinator: MainCoordinator
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        List(movies) { movie in
+            Button {
+                coordinator.push(movie)
+            } label: {
+                HStack {
+                    Image(systemName: "movieclapper.fill")
+                    Text(movie.title)
+                    Spacer()
+                    Text("\(movie.year) г.")
+                    Image(systemName: "chevron.right")
+                }
+            }
+        }
+        .navigationTitle("Фильмы")
     }
 }
 
 #Preview {
-    MoviesListView()
+    MoviesListView(movies: [])
+    .environment(MainCoordinator())
 }

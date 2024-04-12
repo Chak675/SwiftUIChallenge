@@ -6,3 +6,40 @@
 //
 
 import Foundation
+
+final class MoviesRequest {
+ 
+    static let shared = MoviesRequest()
+    
+    private init() {}
+    
+    func fetch(complition: @escaping (Result<[Movie], Error>) -> Void) {
+        guard let path = Bundle.main.path(forResource: "Movies", ofType: "json") else {
+            return complition(.failure(PathError.invalidPath))
+        }
+        
+        do {
+            let data = try Data(contentsOf: URL(fileURLWithPath: path))
+            let movies = try JSONDecoder().decode([Movie].self, from: data)
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+                complition(.success(movies))
+            }
+        } catch {
+            guard let error = error as? DecodingError else {
+                return complition(.failure(error))
+            }
+            
+            switch error {
+                case .typeMismatch(_, _), .dataCorrupted(_):
+                    complition(.failure(PathError.json))
+                case .valueNotFound(_, _):
+                    complition(.failure(PathError.value))
+                case .keyNotFound(_, _):
+                    complition(.failure(PathError.key))
+                @unknown default:
+                    complition(.failure(error))
+            }
+        }
+    }
+}

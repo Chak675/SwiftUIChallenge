@@ -8,17 +8,33 @@
 
 /* Begin PBXBuildFile section */
 		182B16722BC3CC8B00458DE3 /* SwiftUIChallengeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182B16712BC3CC8B00458DE3 /* SwiftUIChallengeApp.swift */; };
-		182B16742BC3CC8B00458DE3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182B16732BC3CC8B00458DE3 /* ContentView.swift */; };
+		182B16742BC3CC8B00458DE3 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182B16732BC3CC8B00458DE3 /* MainView.swift */; };
 		182B16762BC3CC8F00458DE3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 182B16752BC3CC8F00458DE3 /* Assets.xcassets */; };
 		182B16792BC3CC8F00458DE3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 182B16782BC3CC8F00458DE3 /* Preview Assets.xcassets */; };
+		182B16802BC3CCC500458DE3 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182B167F2BC3CCC500458DE3 /* Movie.swift */; };
+		182B16822BC3D7E600458DE3 /* Movies.json in Resources */ = {isa = PBXBuildFile; fileRef = 182B16812BC3D7E600458DE3 /* Movies.json */; };
+		182B16922BC5214800458DE3 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182B16912BC5214800458DE3 /* Coordinator.swift */; };
+		182B16962BC5B94B00458DE3 /* MoviesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182B16952BC5B94B00458DE3 /* MoviesRequest.swift */; };
+		182B16982BC5C8C200458DE3 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182B16972BC5C8C200458DE3 /* MainViewModel.swift */; };
+		182B169C2BC5CF6100458DE3 /* MoviesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182B169B2BC5CF6100458DE3 /* MoviesListView.swift */; };
+		182B169E2BC5D31B00458DE3 /* MovieDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182B169D2BC5D31B00458DE3 /* MovieDetailsView.swift */; };
+		18D68D072BC8526200A12C7D /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D68D062BC8526200A12C7D /* Errors.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		182B166E2BC3CC8B00458DE3 /* SwiftUIChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUIChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		182B16712BC3CC8B00458DE3 /* SwiftUIChallengeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIChallengeApp.swift; sourceTree = "<group>"; };
-		182B16732BC3CC8B00458DE3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		182B16732BC3CC8B00458DE3 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		182B16752BC3CC8F00458DE3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		182B16782BC3CC8F00458DE3 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		182B167F2BC3CCC500458DE3 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
+		182B16812BC3D7E600458DE3 /* Movies.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Movies.json; sourceTree = "<group>"; };
+		182B16912BC5214800458DE3 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		182B16952BC5B94B00458DE3 /* MoviesRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesRequest.swift; sourceTree = "<group>"; };
+		182B16972BC5C8C200458DE3 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		182B169B2BC5CF6100458DE3 /* MoviesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesListView.swift; sourceTree = "<group>"; };
+		182B169D2BC5D31B00458DE3 /* MovieDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailsView.swift; sourceTree = "<group>"; };
+		18D68D062BC8526200A12C7D /* Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,8 +68,12 @@
 			isa = PBXGroup;
 			children = (
 				182B16712BC3CC8B00458DE3 /* SwiftUIChallengeApp.swift */,
-				182B16732BC3CC8B00458DE3 /* ContentView.swift */,
+				182B16862BC3F52000458DE3 /* Views */,
+				182B168E2BC5211F00458DE3 /* Coordinator */,
+				182B16932BC5B44F00458DE3 /* DTO */,
+				182B16852BC3F4FF00458DE3 /* Networking */,
 				182B16752BC3CC8F00458DE3 /* Assets.xcassets */,
+				182B16812BC3D7E600458DE3 /* Movies.json */,
 				182B16772BC3CC8F00458DE3 /* Preview Content */,
 			);
 			path = SwiftUIChallenge;
@@ -65,6 +85,66 @@
 				182B16782BC3CC8F00458DE3 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		182B16852BC3F4FF00458DE3 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				182B16942BC5B92900458DE3 /* Movies */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		182B16862BC3F52000458DE3 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				182B16732BC3CC8B00458DE3 /* MainView.swift */,
+				182B16972BC5C8C200458DE3 /* MainViewModel.swift */,
+				182B16992BC5CF1D00458DE3 /* MoviesListView */,
+				182B169A2BC5CF3500458DE3 /* MovieDetailsView */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		182B168E2BC5211F00458DE3 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				182B16912BC5214800458DE3 /* Coordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		182B16932BC5B44F00458DE3 /* DTO */ = {
+			isa = PBXGroup;
+			children = (
+				182B167F2BC3CCC500458DE3 /* Movie.swift */,
+				18D68D062BC8526200A12C7D /* Errors.swift */,
+			);
+			path = DTO;
+			sourceTree = "<group>";
+		};
+		182B16942BC5B92900458DE3 /* Movies */ = {
+			isa = PBXGroup;
+			children = (
+				182B16952BC5B94B00458DE3 /* MoviesRequest.swift */,
+			);
+			path = Movies;
+			sourceTree = "<group>";
+		};
+		182B16992BC5CF1D00458DE3 /* MoviesListView */ = {
+			isa = PBXGroup;
+			children = (
+				182B169B2BC5CF6100458DE3 /* MoviesListView.swift */,
+			);
+			path = MoviesListView;
+			sourceTree = "<group>";
+		};
+		182B169A2BC5CF3500458DE3 /* MovieDetailsView */ = {
+			isa = PBXGroup;
+			children = (
+				182B169D2BC5D31B00458DE3 /* MovieDetailsView.swift */,
+			);
+			path = MovieDetailsView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -127,6 +207,7 @@
 			files = (
 				182B16792BC3CC8F00458DE3 /* Preview Assets.xcassets in Resources */,
 				182B16762BC3CC8F00458DE3 /* Assets.xcassets in Resources */,
+				182B16822BC3D7E600458DE3 /* Movies.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,8 +218,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				182B16742BC3CC8B00458DE3 /* ContentView.swift in Sources */,
+				182B16962BC5B94B00458DE3 /* MoviesRequest.swift in Sources */,
+				182B169C2BC5CF6100458DE3 /* MoviesListView.swift in Sources */,
+				182B16742BC3CC8B00458DE3 /* MainView.swift in Sources */,
 				182B16722BC3CC8B00458DE3 /* SwiftUIChallengeApp.swift in Sources */,
+				182B16802BC3CCC500458DE3 /* Movie.swift in Sources */,
+				182B16922BC5214800458DE3 /* Coordinator.swift in Sources */,
+				182B169E2BC5D31B00458DE3 /* MovieDetailsView.swift in Sources */,
+				18D68D072BC8526200A12C7D /* Errors.swift in Sources */,
+				182B16982BC5C8C200458DE3 /* MainViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -287,6 +375,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = ru.SwiftUIChallenge;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -316,6 +407,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = ru.SwiftUIChallenge;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

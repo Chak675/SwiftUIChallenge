@@ -6,25 +6,25 @@
 //
 
 import SwiftUI
+import Observation
 
-enum Page: String {
-   case contentView, detailView
+protocol Coordinator: AnyObject {
     
-//    var id: String {
-//        self.rawValue
-//    }
+    var path: NavigationPath { get set }
+    
+    func push<Item: Hashable>(_ item: Item)
+    func pop()
+    func popToRoot()
 }
 
-class Coordinator: ObservableObject {
+@Observable
+final class MainCoordinator: Coordinator {
     
-    @Published var path = NavigationPath()
-//    @Published var sheet: Sheet?
-//    @Published var fullScreenCover: FullScreenCover?
+    var path = NavigationPath()
     
-    func push(_ page: Page) {
-        path.append(page)
+    func push<Item: Hashable>(_ item: Item) {
+        path.append(item)
     }
-    
     
     func pop() {
         path.removeLast()
@@ -32,15 +32,5 @@ class Coordinator: ObservableObject {
     
     func popToRoot() {
         path.removeLast(path.count)
-    }
-    
-    @ViewBuilder
-    func build(page: Page) -> some View {
-        switch page {
-            case .contentView:
-                ContentView()
-            case .detailView:
-                DetailView()
-        }
     }
 }
