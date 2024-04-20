@@ -15,7 +15,7 @@ final class MoviesRequest {
     
     func fetch(complition: @escaping (Result<[Movie], Error>) -> Void) {
         guard let path = Bundle.main.path(forResource: "Movies", ofType: "json") else {
-            return complition(.failure(PathError.invalidPath))
+            return complition(.failure(CustomError.invalidPath))
         }
         
         do {
@@ -32,11 +32,11 @@ final class MoviesRequest {
             
             switch error {
                 case .typeMismatch(_, _), .dataCorrupted(_):
-                    complition(.failure(PathError.json))
+                    complition(.failure(CustomError.json))
                 case .valueNotFound(_, _):
-                    complition(.failure(PathError.value))
+                    complition(.failure(CustomError.value))
                 case .keyNotFound(_, _):
-                    complition(.failure(PathError.key))
+                    complition(.failure(CustomError.key))
                 @unknown default:
                     complition(.failure(error))
             }
